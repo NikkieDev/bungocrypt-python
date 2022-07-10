@@ -1,12 +1,15 @@
 def encrypt(data, key: list):
     if data is None:
-        return "InputError[1]: Missing data to encrypt."
+        print("InputError[1]: Missing data to encrypt.")
+        return Exception()
 
     if len(key) != 42:
-        return "KeyError[1]: Key must be 42 characters long!"
+        print("KeyError[1]: Key must be 42 characters long!")
+        return Exception()
 
     if type(key) != list:
-        return "KeyError[2]: Key is not an array!"
+        print("KeyError[2]: Key is not an array!")
+        return Exception()
 
     encrypted_str = str("")
     to_encrypt = list(data.lower())

@@ -41,7 +41,7 @@ def create_key():
     for key_char in key_arr:
         key += key_char
 
-    return key
+    return list(key)
 
 def key_to_arr(key: str):
     """Changes your key from string format to an array that can be used to encrypt and decrypt your data. Key must be 42 characters long"""
