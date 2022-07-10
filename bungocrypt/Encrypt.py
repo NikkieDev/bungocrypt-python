@@ -1,19 +1,18 @@
-import random
+def encrypt(data, key: list):
+    if data is None:
+        return "InputError[1]: Missing data to encrypt."
 
-def encrypt(data, key):
     if len(key) != 42:
-        raise "KeyLengthError: Your key must be 42 characters long!"
+        return "KeyError[1]: Key must be 42 characters long!"
+
+    if type(key) != list:
+        return "KeyError[2]: Key is not an array!"
 
     encrypted_str = str("")
     to_encrypt = list(data.lower())
 
     if key is None:
         return TypeError
-
-    string = "%++++++====#$$!$!#@$@#@!"
-    string_array = list(string)
-
-    encr_pos = random.randint(0, 24)
 
     for char in to_encrypt:
         if (char == "a"):
@@ -103,8 +102,6 @@ def encrypt(data, key):
         elif (char == "*"):
             encrypted_str += key[42]
 
-        string_array.insert(encr_pos, encrypted_str)
-
-    return_data = encrypted_str # Returns the encrypted string, and data position in the defined string
+    return_data = encrypted_str
 
     return return_data
