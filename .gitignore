@@ -5,3 +5,4 @@ Crypt/__pycache__/Key.cpython-39.pyc
 bungocrypt/__pycache__/Encrypt.cpython-39.pyc
 .gitignore
 bungocrypt/__pycache__/Key.cpython-39.pyc
+bungocrypt/__pycache__/Crypt.cpython-39.pyc
