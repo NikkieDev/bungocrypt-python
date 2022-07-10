@@ -1,8 +1,7 @@
 import random
-import string
 
 def create_key():
-    """Creates a 42 character key in an array. This key can be used for encrypting and decrypting. Please store this key somewhere safe (use the arr_to_key function to get a storeable string key.), as you will need it for decrypting your data as well. Losing this key will leave your data encrypted forever, and is unrecoverable!"""
+    """Creates a 43 character key in an array. This key can be used for encrypting and decrypting. Please store this key somewhere safe (use the arr_to_key function to get a storeable string key.), as you will need it for decrypting your data as well. Losing this key will leave your data encrypted forever, and is unrecoverable!"""
     key_arr_1 = []
     key_arr_2 = []
     key = ""
@@ -12,7 +11,7 @@ def create_key():
     symbols = ["!", "@", "#", "$", "(", ")", "*"]
     total = alphabet + numbers + symbols
 
-    for x in range(0, 21):
+    for x in range(0, 22):
         value = random.choice(total)
 
         if value not in key_arr_1:
@@ -23,7 +22,7 @@ def create_key():
             key_arr_1.append(value)
             total.pop(total.index(value))
 
-    for x in range(0, 20):
+    for x in range(0, 21):
         value = random.choice(total)
 
         if value not in key_arr_2:
@@ -44,13 +43,13 @@ def create_key():
     return list(key)
 
 def key_to_arr(key: str):
-    """Changes your key from string format to an array that can be used to encrypt and decrypt your data. Key must be 42 characters long"""
+    """Changes your key from string format to an array that can be used to encrypt and decrypt your data. Key must be 44 characters long"""
     key_arr = list(key)
 
     return key_arr
 
 def arr_to_key(key: list):
-    """Changes your key from array to string format that you can store for later use. Key must be 42 characters long"""
+    """Changes your key from array to string format that you can store for later use. Key must be 44 characters long"""
     string = ""
 
     for key_char in key:
