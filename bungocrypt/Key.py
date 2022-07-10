@@ -1,7 +1,7 @@
 import random
 
 def create_key():
-    """Creates a 43 character key in an array. This key can be used for encrypting and decrypting. Please store this key somewhere safe (use the arr_to_key function to get a storeable string key.), as you will need it for decrypting your data as well. Losing this key will leave your data encrypted forever, and is unrecoverable!"""
+    """Creates a 44 character key in an array. This key can be used for encrypting and decrypting. Please store this key somewhere safe (use the arr_to_key function to get a storeable string key.), as you will need it for decrypting your data as well. Losing this key will leave your data encrypted forever, and is unrecoverable!"""
     key_arr_1 = []
     key_arr_2 = []
     key = ""
