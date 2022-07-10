@@ -108,3 +108,25 @@ def encrypt(data, key: list):
     return_data = encrypted_str
 
     return return_data
+
+def decrypt(data, key: list):
+    decrypted_str = str("")
+
+    if data is None:
+        print("InputError[1]: Missing data to encrypt.")
+        return Exception()
+
+    if len(key) != 42:
+        print("KeyError[1]: Key must be 42 characters long!")
+        return Exception()
+
+    if type(key) != list:
+        print("KeyError[2]: Key is not an array!")
+        return Exception()
+
+    data = list(data)
+
+    for data_char in data:
+        for x in range(len(key)):
+            if key[x] == data_char:
+                print(key[x])
