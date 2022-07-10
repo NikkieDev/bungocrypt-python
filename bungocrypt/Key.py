@@ -2,7 +2,7 @@ import random
 import string
 
 def create_key():
-    """Only use to store your key. If you want to encrypt your data, please use create_key_arr"""
+    """Creates a 42 character key in an array. This key can be used for encrypting and decrypting. Please store this key somewhere safe (use the arr_to_key function to get a storeable string key.), as you will need it for decrypting your data as well. Losing this key will leave your data encrypted forever, and is unrecoverable!"""
     key_arr_1 = []
     key_arr_2 = []
     key = ""
@@ -13,10 +13,26 @@ def create_key():
     total = alphabet + numbers + symbols
 
     for x in range(0, 21):
-        key_arr_1.append(random.choice(total))
+        value = random.choice(total)
+
+        if value not in key_arr_1:
+            key_arr_1.append(value)
+            total.pop(total.index(value))
+        else:
+            value = random.choice(total)
+            key_arr_1.append(value)
+            total.pop(total.index(value))
 
     for x in range(0, 20):
-        key_arr_2.append(random.choice(total))
+        value = random.choice(total)
+
+        if value not in key_arr_2:
+            key_arr_2.append(value)
+            total.pop(total.index(value))
+        else:
+            value = random.choice(total)
+            key_arr_2.append(value)
+            total.pop(total.index(value))
 
     key_arr_1.append(".")
 
@@ -26,13 +42,6 @@ def create_key():
         key += key_char
 
     return key
-
-def create_key_arr():
-    """Creates a 42 character key in an array. This key can be used for encrypting and decrypting. Please store this key somewhere safe (use the arr_to_key function to get a storeable string key.), as you will need it for decrypting your data as well. Losing this key will leave your data encrypted forever, and is unrecoverable!"""
-    key_str = create_key()
-    key_arr = list(key_str)
-
-    return key_arr
 
 def key_to_arr(key: str):
     """Changes your key from string format to an array that can be used to encrypt and decrypt your data. Key must be 42 characters long"""
